@@ -1,0 +1,22 @@
+#include <string>
+using namespace std;
+
+class Solution {
+public:
+    string defangIPaddr(string address) {
+        string result = "";
+        
+        // Iterate through each character of the IP address
+        for (char c : address) {
+            if (c == '.') {
+                // Replace '.' with '[.]'
+                result += "[.]";
+            } else {
+                // Keep other characters as-is
+                result += c;
+            }
+        }
+        
+        return result;
+    }
+};
