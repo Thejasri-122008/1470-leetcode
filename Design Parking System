@@ -1,0 +1,20 @@
+class ParkingSystem {
+    // Array where index 0 = big, index 1 = medium, index 2 = small
+    private int[] slots;
+
+    public ParkingSystem(int big, int medium, int small) {
+        slots = new int[] { big, medium, small };
+    }
+    
+    public boolean addCar(int carType) {
+        // Map carType (1, 2, 3) to array indices (0, 1, 2)
+        int index = carType - 1;
+        
+        if (slots[index] > 0) {
+            slots[index]--;
+            return true;
+        }
+        
+        return false;
+    }
+}
